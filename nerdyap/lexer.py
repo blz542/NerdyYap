@@ -31,6 +31,16 @@ class Lexer:
                 self.advance()
                 continue
 
+            if current.isspace():
+                self.advance()
+                continue
+
+            # Comments
+            if current == "#":
+                while self.position < len(self.source) and self.source[self.position] != "\n":
+                    self.advance()
+                continue
+
             line = self.line
             column = self.column
 
