@@ -1,0 +1,8 @@
+yo x be 10;
+yo y be 20;
+
+if x gets mogged by y {
+    yap "X GOT COOKED";
+} else {
+    yap "X MOGS Y";
+}
