@@ -4,6 +4,8 @@ NerdyYap is a programming language made by BLZ542, specifically built to be an e
 
 ## Syntax
 
+Comments are used the same way as in python, by using #
+
 Variables:
 `yo x be 10;`
 
