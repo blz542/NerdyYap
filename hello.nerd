@@ -1,8 +1,11 @@
-yo x be 10;   # x=10;
-yo y be 20;   # y=20;
+yo x be 10;               # x=10;
+yo y be 20;               # y=20;
 
-if x gets mogged by y {   # if (x < y) {
+if x gets mogged by y     # if (x < y)
+{                         # {
     yap "X GOT COOKED";   # print("X GOT COOKED");
-} else {                  # } else {
+}                         # }
+else                      # else
+{                         # }
     yap "X MOGS Y";       # print "X MOGS Y";
 }                         # }
