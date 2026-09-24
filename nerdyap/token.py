@@ -13,7 +13,7 @@ class TokenType(Enum):
     IF = "IF"
     ELSE = "ELSE"
     WHILE = "WHILE"
-    DO = "DO"
+    GRIND = "GRIND"
     FOR = "FOR"
     IN = "IN"
     BREAK = "BREAK"

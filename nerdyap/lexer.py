@@ -134,7 +134,7 @@ class Lexer:
             "if": TokenType.IF,
             "else": TokenType.ELSE,
             "while": TokenType.WHILE,
-            "do": TokenType.DO,
+            "grind": TokenType.GRIND,
             "for": TokenType.FOR,
             "in": TokenType.IN,
             "break": TokenType.BREAK,

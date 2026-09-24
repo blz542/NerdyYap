@@ -27,9 +27,9 @@ Supports `+`, `-`, `*`, `/`, and parentheses.
 Arrays:
 `yo nums be [10, 20, 30];`
 `yap nums[0];`
-`nums[0] be 99;`
+`yo nums[0] be 99;`
 
-Arrays can contain numbers, strings, characters, and nested arrays. Array methods are not supported yet.
+Arrays can contain numbers, strings, characters. Array methods and nested arrays are not supported yet.
 
 Comparisons:
 `mogs` = `>`
@@ -47,10 +47,10 @@ Loops and control flow:
 ```nerd
 while x gets mogged by 10 {
     yap x;
-    x be x + 1;
+    yo x be x + 1;
 }
 
-do {
+grind {
     yap "runs at least once";
 } while x mogs 0;
 

@@ -26,14 +26,18 @@ class Parser:
         if t==TokenType.YAP: self.advance(); return {"type":"yap","value":self.expression()}
         if t==TokenType.IF: return self.if_stmt()
         if t==TokenType.WHILE: return self.loop("while")
-        if t==TokenType.DO: return self.do_while()
+        if t==TokenType.GRIND: return self.do_while()
         if t==TokenType.FOR: return self.for_stmt()
         if t in (TokenType.BREAK,TokenType.CONTINUE): self.advance(); return {"type":t.name.lower()}
-        if t==TokenType.IDENTIFIER and self.tokens[self.position+1].type in (TokenType.LBRACKET, TokenType.BE): return self.assignment()
         self.error()
     def variable(self):
         self.advance(); n=self.advance()
-        if n.type!=TokenType.IDENTIFIER or self.advance().type!=TokenType.BE: self.error()
+        if n.type!=TokenType.IDENTIFIER: self.error()
+        if self.current().type==TokenType.LBRACKET:
+            target=self.index({"type":"value","value":n.value})
+            if self.advance().type!=TokenType.BE: self.error()
+            return {"type":"assignment","target":target,"value":self.expression()}
+        if self.advance().type!=TokenType.BE: self.error()
         return {"type":"variable","name":n.value,"value":self.expression()}
     def block(self):
         if self.current().type!=TokenType.LBRACE: self.error()
