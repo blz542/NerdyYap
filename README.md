@@ -4,7 +4,7 @@ NerdyYap is a programming language made by BLZ542, specifically built to be an e
 
 ## Syntax
 
-Comments are used the same way as in python, by using #
+Comments are used the same way as in Python, by using `#`
 
 Variables:
 `yo x be 10;`
@@ -37,6 +37,7 @@ Comparisons:
 `larping` = `==`
 
 If / Else:
+```nerd
 if x gets mogged by y {
     yap "X GOT COOKED";
 } else {
@@ -44,7 +45,7 @@ if x gets mogged by y {
 }
 
 Loops and control flow:
-```nerd
+
 while x gets mogged by 10 {
     yap x;
     yo x be x + 1;
@@ -60,7 +61,7 @@ for item in nums {
 
 break;
 continue;
-```
 
-The CLI command is `nerd`:
-`nerd program.nerd`
+The CLI command is nerd:
+
+nerd program.nerd
