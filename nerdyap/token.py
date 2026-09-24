@@ -4,6 +4,7 @@ from enum import Enum
 class TokenType(Enum):
     NUMBER = "NUMBER"
     STRING = "STRING"
+    CHAR = "CHAR"
     IDENTIFIER = "IDENTIFIER"
 
     YO = "YO"
@@ -11,6 +12,12 @@ class TokenType(Enum):
     YAP = "YAP"
     IF = "IF"
     ELSE = "ELSE"
+    WHILE = "WHILE"
+    DO = "DO"
+    FOR = "FOR"
+    IN = "IN"
+    BREAK = "BREAK"
+    CONTINUE = "CONTINUE"
 
     PLUS = "PLUS"
     MINUS = "MINUS"
@@ -25,6 +32,10 @@ class TokenType(Enum):
 
     LPAREN = "LPAREN"
     RPAREN = "RPAREN"
+
+    LBRACKET = "LBRACKET"
+    RBRACKET = "RBRACKET"
+    COMMA = "COMMA"
 
     LBRACE = "LBRACE"
     RBRACE = "RBRACE"

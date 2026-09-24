@@ -1,0 +1,15 @@
+{
+  "scopeName": "source.nerd",
+  "name": "NerdYap",
+  "patterns": [
+    {"include":"#comments"},
+    {"name":"keyword.control.nerd","match":"\\b(yo|be|yap|if|else|while|do|for|in|break|continue)\\b"},
+    {"name":"keyword.operator.nerd","match":"\\b(mogs|gets|mogged|by|larping)\\b"},
+    {"name":"constant.numeric.nerd","match":"\\b\\d+\\b"},
+    {"name":"string.quoted.double.nerd","begin":"\"","end":"\""},
+    {"name":"string.quoted.single.nerd","begin":"'","end":"'"},
+    {"name":"variable.other.nerd","match":"\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"},
+    {"name":"punctuation.bracket.nerd","match":"[()\\[\\]{}]"}
+  ],
+  "repository": {"comments":{"patterns":[{"name":"comment.line.number-sign.nerd","match":"#.*$"}]}}
+}

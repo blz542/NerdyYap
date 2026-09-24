@@ -31,10 +31,6 @@ class Lexer:
                 self.advance()
                 continue
 
-            if current.isspace():
-                self.advance()
-                continue
-
             # Comments
             if current == "#":
                 while self.position < len(self.source) and self.source[self.position] != "\n":
@@ -56,6 +52,10 @@ class Lexer:
                 tokens.append(self.read_string(line, column))
                 continue
 
+            if current == "'":
+                tokens.append(self.read_char(line, column))
+                continue
+
             single_char_tokens = {
                 "+": TokenType.PLUS,
                 "-": TokenType.MINUS,
@@ -64,6 +64,9 @@ class Lexer:
 
                 "(": TokenType.LPAREN,
                 ")": TokenType.RPAREN,
+                "[": TokenType.LBRACKET,
+                "]": TokenType.RBRACKET,
+                ",": TokenType.COMMA,
                 
                 "{": TokenType.LBRACE,
                 "}": TokenType.RBRACE,
@@ -130,6 +133,12 @@ class Lexer:
             "yap": TokenType.YAP,
             "if": TokenType.IF,
             "else": TokenType.ELSE,
+            "while": TokenType.WHILE,
+            "do": TokenType.DO,
+            "for": TokenType.FOR,
+            "in": TokenType.IN,
+            "break": TokenType.BREAK,
+            "continue": TokenType.CONTINUE,
             "mogs": TokenType.MOGS,
             "gets": TokenType.GETS,
             "mogged": TokenType.MOGGED,
@@ -175,3 +184,23 @@ class Lexer:
             line,
             column
         )
+
+    def read_char(self, line, column):
+        self.advance()  # opening '
+        start = self.position
+
+        while self.position < len(self.source) and self.source[self.position] != "'":
+            if self.source[self.position] == "\n":
+                raise SyntaxError(f"skill issue at ln {line}, col {column}")
+            self.advance()
+
+        if self.position >= len(self.source):
+            raise SyntaxError(f"skill issue at ln {line}, col {column}")
+
+        value = self.source[start:self.position]
+        self.advance()  # closing '
+
+        if len(value) != 1:
+            raise SyntaxError(f"skill issue at ln {line}, col {column}")
+
+        return Token(TokenType.CHAR, value, line, column)

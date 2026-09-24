@@ -12,6 +12,9 @@ Variables:
 Strings:
 `yo name be "NerdyYap";`
 
+Characters use single quotes and contain exactly one character:
+`yo initial be 'N';`
+
 Output:
 `yap "Hello, world!";`
 `yap x;`
@@ -20,6 +23,13 @@ Arithmetic:
 `yo result be 10 + 5 * 2;`
 
 Supports `+`, `-`, `*`, `/`, and parentheses.
+
+Arrays:
+`yo nums be [10, 20, 30];`
+`yap nums[0];`
+`nums[0] be 99;`
+
+Arrays can contain numbers, strings, characters, and nested arrays. Array methods are not supported yet.
 
 Comparisons:
 `mogs` = `>`
@@ -32,3 +42,25 @@ if x gets mogged by y {
 } else {
     yap "X MOGS Y";
 }
+
+Loops and control flow:
+```nerd
+while x gets mogged by 10 {
+    yap x;
+    x be x + 1;
+}
+
+do {
+    yap "runs at least once";
+} while x mogs 0;
+
+for item in nums {
+    yap item;
+}
+
+break;
+continue;
+```
+
+The CLI command is `nerd`:
+`nerd program.nerd`

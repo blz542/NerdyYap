@@ -1,0 +1,27 @@
+{
+  "name": "nerdyap-language",
+  "displayName": "NerdyYap Language",
+  "description": "VS Code language support for NerdyYap",
+  "version": "0.0.1",
+  "publisher": "nerdyap",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "nerdyap",
+        "aliases": ["NerdyYap", "nerdyap"],
+        "extensions": [".nerd"],
+        "configuration": "./.vscode/language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "nerdyap",
+        "scopeName": "source.nerd",
+        "path": "./.vscode/nerd.tmLanguage.json"
+      }
+    ]
+  }
+}
