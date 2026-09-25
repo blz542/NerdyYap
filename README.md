@@ -2,9 +2,12 @@
 
 NerdyYap is a programming language made by BLZ542, specifically built to be an esolang made not to make coding easier, but fun. It uses Gen Z terminology and slangs as part of its syntax, giving traditional programming concepts a twist while still functioning as a real programming language.
 
+
+The CLI command is nerd:  nerd program.nerd
+
 ## Syntax
 
-Comments are used the same way as in python, by using #
+Comments are used the same way as in Python, by using `#`
 
 Variables:
 `yo x be 10;`
@@ -37,6 +40,7 @@ Comparisons:
 `larping` = `==`
 
 If / Else:
+```nerd
 if x gets mogged by y {
     yap "X GOT COOKED";
 } else {
@@ -44,7 +48,7 @@ if x gets mogged by y {
 }
 
 Loops and control flow:
-```nerd
+
 while x gets mogged by 10 {
     yap x;
     yo x be x + 1;
@@ -60,7 +64,3 @@ for item in nums {
 
 break;
 continue;
-```
-
-The CLI command is `nerd`:
-`nerd program.nerd`
