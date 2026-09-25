@@ -1,11 +1,17 @@
 {
   "name": "nerdyap-language",
+  "icon": "nerd_icon.png",
   "displayName": "NerdyYap",
-  "description": "VS Code language support for NerdyYap",
-  "version": "0.0.1",
-  "publisher": "nerdyap",
+  "description": "Syntax highlighting and language support for the NerdyYap esoteric programming language.",
+  "version": "0.0.3",
+  "publisher": "blz542",
   "engines": {
     "vscode": "^1.50.0"
+  },
+  "categories": ["Programming Languages"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blz542/NerdyYap.git"
   },
   "contributes": {
     "languages": [
