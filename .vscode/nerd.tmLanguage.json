@@ -3,7 +3,7 @@
   "name": "NerdYap",
   "patterns": [
     {"include":"#comments"},
-    {"name":"keyword.control.nerd","match":"\\b(yo|be|yap|if|else|while|grind|for|in|break|continue)\\b"},
+    {"name":"keyword.control.nerd","match":"\\b(yo|be|yap|if|else|while|grind|for|in|yeet|continue)\\b"},
     {"name":"keyword.operator.nerd","match":"\\b(mogs|gets|mogged|by|larping)\\b"},
     {"name":"constant.numeric.nerd","match":"\\b\\d+\\b"},
     {"name":"string.quoted.double.nerd","begin":"\"","end":"\""},

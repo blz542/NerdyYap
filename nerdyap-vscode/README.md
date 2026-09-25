@@ -19,6 +19,6 @@ The extension currently highlights the NerdyYap v0.0.2 syntax, including:
 - Indexed array assignment: `yo nums[0] be 99;`
 - Gen-Z comparisons: `mogs`, `gets mogged by`, and `larping`
 - `if`/`else`, `while`, and `grind ... while` loops
-- `for ... in`, `break`, and `continue`
+- `for ... in`, `yeet`, and `continue`
 
 See the [NerdyYap repository](https://github.com/blz542/NerdyYap) for the language implementation and full documentation.

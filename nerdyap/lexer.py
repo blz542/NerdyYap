@@ -137,7 +137,7 @@ class Lexer:
             "grind": TokenType.GRIND,
             "for": TokenType.FOR,
             "in": TokenType.IN,
-            "break": TokenType.BREAK,
+            "yeet": TokenType.YEET,
             "continue": TokenType.CONTINUE,
             "mogs": TokenType.MOGS,
             "gets": TokenType.GETS,

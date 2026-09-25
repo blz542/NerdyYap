@@ -1,7 +1,7 @@
 from nerdyap.token import TokenType
 
 class Parser:
-    def __init__(self, tokens): self.tokens, self.position = tokens, 0
+    def __init__(self, tokens): self.tokens, self.position, self.loop_depth = tokens, 0, 0
     def current(self): return self.tokens[self.position]
     def advance(self): token=self.current(); self.position+=1; return token
     def error(self):
@@ -28,7 +28,10 @@ class Parser:
         if t==TokenType.WHILE: return self.loop("while")
         if t==TokenType.GRIND: return self.do_while()
         if t==TokenType.FOR: return self.for_stmt()
-        if t in (TokenType.BREAK,TokenType.CONTINUE): self.advance(); return {"type":t.name.lower()}
+        if t==TokenType.YEET:
+            if self.loop_depth == 0: self.error()
+            self.advance(); return {"type":"break"}
+        if t==TokenType.CONTINUE: self.advance(); return {"type":"continue"}
         self.error()
     def variable(self):
         self.advance(); n=self.advance()
@@ -47,9 +50,11 @@ class Parser:
         if self.current().type==TokenType.ELSE: self.advance(); other=self.block()
         return {"type":"if","condition":c,"if_statements":body,"else_statements":other}
     def loop(self, kind):
-        self.advance(); return {"type":kind,"condition":self.condition(),"statements":self.block()}
+        self.advance(); condition=self.condition(); self.loop_depth+=1
+        statements=self.block(); self.loop_depth-=1
+        return {"type":kind,"condition":condition,"statements":statements}
     def do_while(self):
-        self.advance(); body=self.block()
+        self.advance(); self.loop_depth+=1; body=self.block(); self.loop_depth-=1
         if self.current().type!=TokenType.WHILE: self.error()
         self.advance(); c=self.condition()
         if self.current().type!=TokenType.SEMICOLON: self.missing_semicolon()
@@ -57,7 +62,8 @@ class Parser:
     def for_stmt(self):
         self.advance(); n=self.advance()
         if n.type!=TokenType.IDENTIFIER or self.advance().type!=TokenType.IN: self.error()
-        return {"type":"for","name":n.value,"iterable":self.expression(),"statements":self.block()}
+        iterable=self.expression(); self.loop_depth+=1; statements=self.block(); self.loop_depth-=1
+        return {"type":"for","name":n.value,"iterable":iterable,"statements":statements}
     def assignment(self):
         if self.tokens[self.position+1].type==TokenType.BE:
             target={"type":"variable_target","name":self.advance().value}

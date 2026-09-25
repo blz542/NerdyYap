@@ -16,7 +16,7 @@ class TokenType(Enum):
     GRIND = "GRIND"
     FOR = "FOR"
     IN = "IN"
-    BREAK = "BREAK"
+    YEET = "YEET"
     CONTINUE = "CONTINUE"
 
     PLUS = "PLUS"

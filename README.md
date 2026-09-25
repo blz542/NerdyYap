@@ -62,5 +62,5 @@ for item in nums {
     yap item;
 }
 
-break;
+yeet;
 continue;

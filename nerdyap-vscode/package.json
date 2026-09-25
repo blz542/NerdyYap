@@ -3,7 +3,7 @@
   "icon": "nerd_icon.png",
   "displayName": "NerdyYap",
   "description": "Syntax highlighting and language support for the NerdyYap esoteric programming language.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "blz542",
   "engines": {
     "vscode": "^1.50.0"
